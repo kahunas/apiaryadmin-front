@@ -2,20 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer utilities {
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  .animate-fadeIn {
+    animation: fadeIn 0.3s ease-out;
   }
 }
-
+/* Custom Global Styles */
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-[#F0F4F8] text-[#334155] font-sans;
+}
+
+nav {
+  @apply bg-white shadow-md rounded-b-lg border-b border-[#CBD5E1];
+}
+
+nav a {
+  @apply text-[#334155] font-medium transition duration-300;
+}
+
+nav a:hover {
+  @apply text-[#38BDF8];
+}
+
+main {
+  @apply bg-white shadow-lg rounded-lg border border-[#CBD5E1];
+}
+
+h1, h2, h3 {
+  @apply text-[#334155];
 }
