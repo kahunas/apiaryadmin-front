@@ -4,7 +4,7 @@ import { getToken } from "@/utils/auth";
 export class ApiService {
   private baseUrl: string;
   constructor() {
-    this.baseUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
+    this.baseUrl = process.env.NEXT_PUBLIC_API_URL || "https://apiaryadmin.azurewebsites.net/api";
   }
 
   public async registerUser(
