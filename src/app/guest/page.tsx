@@ -31,7 +31,6 @@ export default function GuestApiariesPage() {
     <div className="p-8">
       <h1 className="text-3xl font-bold mb-6">Apiaries</h1>
 
-      {/* Table View */}
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white border border-gray-300 rounded-lg shadow-md">
           <thead className="bg-gray-100">
@@ -44,21 +43,18 @@ export default function GuestApiariesPage() {
             </tr>
           </thead>
           <tbody>
-            {apiaries.map((apiary, index) => (
-              <tr
-                key={apiary.id || `fallback-key-${index}`} // Ensure unique key
-                className="border-t border-gray-300"
-              >
-                <td className="px-6 py-4 text-sm text-gray-700">{apiary.apiaryId || "N/A"}</td>
+            {apiaries.map((apiary) => (
+              <tr key={apiary.apiaryId} className="border-t border-gray-300">
+                <td className="px-6 py-4 text-sm text-gray-700">{apiary.apiaryId}</td>
                 <td className="px-6 py-4 text-sm text-gray-700">{apiary.name}</td>
                 <td className="px-6 py-4 text-sm text-gray-700">{apiary.location}</td>
                 <td className="px-6 py-4 text-sm text-gray-700">{apiary.description}</td>
                 <td className="px-6 py-4 text-sm">
                   <Link
-                    href={`/apiaries/${apiary.id}`}
+                    href={`/guest/${apiary.apiaryId}`}
                     className="text-blue-500 hover:underline"
                   >
-                    View Details
+                    View Hives
                   </Link>
                 </td>
               </tr>

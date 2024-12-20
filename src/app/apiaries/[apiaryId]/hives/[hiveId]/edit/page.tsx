@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { ApiService } from "@/services/api";
+import BackButton from "@/components/BackButton";
 
 export default function EditHivePage() {
   const { apiaryId, hiveId } = useParams();
@@ -53,6 +54,7 @@ export default function EditHivePage() {
 
   return (
     <div className="p-8">
+      <BackButton fallbackPath={`/apiaries/${apiaryId}`} />
       <h1 className="text-3xl font-bold mb-6">Edit Hive</h1>
       <form
         onSubmit={handleSaveChanges}

@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { ApiService } from "@/services/api";
 import Link from "next/link";
+import BackButton from "@/components/BackButton";
 
 export default function ApiaryDetailsPage() {
   const { apiaryId } = useParams();
@@ -73,6 +74,8 @@ export default function ApiaryDetailsPage() {
 
   return (
     <div className="p-8">
+      <BackButton fallbackPath="/dashboard" />
+      <h1 className="text-3xl font-bold mb-6">Apiary Details</h1>
       <h1 className="text-3xl font-bold mb-6">Apiary: {apiary.name}</h1>
       <p className="mb-4">
         <strong>Location:</strong> {apiary.location}

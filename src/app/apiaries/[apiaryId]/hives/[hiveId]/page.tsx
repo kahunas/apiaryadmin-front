@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { ApiService } from "@/services/api";
 import Link from "next/link";
+import BackButton from "@/components/BackButton";
 
 export default function HiveDetailsPage() {
   const { apiaryId, hiveId } = useParams();
@@ -86,6 +87,8 @@ export default function HiveDetailsPage() {
 
   return (
     <div className="p-8">
+      <BackButton fallbackPath={`/apiaries/${apiaryId}`} />
+      <h1 className="text-3xl font-bold mb-6">Hive Details</h1>
       <h1 className="text-3xl font-bold mb-6">Hive: {hive.name}</h1>
       <p className="mb-4"><strong>Description:</strong> {hive.description}</p>
 
@@ -163,13 +166,20 @@ export default function HiveDetailsPage() {
                 </td>
                 <td className="px-6 py-4 text-sm text-gray-700">{inspection.notes}</td>
                 <td className="px-6 py-4 text-sm space-x-2">
-                  <button
-                    className="text-red-500 hover:underline"
-                    onClick={() => handleDeleteInspection(inspection.inspectionId)}
-                  >
-                    Delete
-                  </button>
-                </td>
+  <Link
+    href={`/apiaries/${apiaryId}/hives/${hive.hiveId}/inspections/${inspection.inspectionId}/edit`}
+    className="text-green-500 hover:underline"
+  >
+    Edit
+  </Link>
+  <button
+    className="text-red-500 hover:underline"
+    onClick={() => handleDeleteInspection(inspection.inspectionId)}
+  >
+    Delete
+  </button>
+</td>
+
               </tr>
             ))}
           </tbody>

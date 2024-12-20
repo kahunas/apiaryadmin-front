@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter, useParams } from "next/navigation";
 import { ApiService } from "@/services/api";
+import BackButton from "@/components/BackButton";
 
 export default function EditApiaryPage() {
   const router = useRouter();
@@ -50,6 +51,7 @@ export default function EditApiaryPage() {
 
   return (
     <div className="p-8">
+      <BackButton fallbackPath="/dashboard" />
       <h1 className="text-3xl font-bold mb-6">Edit Apiary</h1>
 
       <form
