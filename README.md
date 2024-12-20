@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ApiaryAdmin
 
-## Getting Started
+## Aprašymas
+ApiaryAdmin sistema skirta bitininkams administruoti savo bitynus. Naudotojai gali kurti bitynus, pridėti avilius ir vykdyti jų apžiūras. Sistema padeda tvarkyti informaciją apie bitynų būklę, avilių būklę ir atliktas apžiūras.
 
-First, run the development server:
+Taikomosios srities objektai: **Bitynas** (Apiary) -> **Avilys** (Hive) -> **Apžiūra** (Inspection).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
+## Funkcionalumas (funkciniai reikalavimai)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* Sistemoje veiks naudotojų autentifikacija, o naudotojai bus skirstomi į svečius, registruotus naudotojus (bitininkus) ir administratorius.
+* **Svečias** gali peržiūrėti viską.
+* **Registruotas naudotojas** (bitininkas) gali atlikti šiuos veiksmus:
+  - Kurti ir valdyti savo bitynus.
+  - Pridėti naujus avilius į savo bitynus.
+  - Registruoti avilių apžiūras ir tvarkyti apžiūrų įrašus.
+  - Atlikti CRUD (sukurti, peržiūrėti, redaguoti, pašalinti) operacijas tik su savo turiniu (bitynais, aviliais, apžiūromis).
+* **Administratorius** turi visas teises ir gali valdyti ne tik savo, bet ir kitų naudotojų turinį bei naudotojų paskyras.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
+Naudojamos technologijos:
+- **Frontend**: Next.JS su TypeScript
+- **Backend**: .NET (ASP.NET Core)
+- **Duomenų bazė**: PostgreSQL
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+Deployment diagrama:
+![Image](./DD.jpg)
 
-To learn more about Next.js, take a look at the following resources:
+Figma:
+https://www.figma.com/design/AWeUdSbF5ZNeWhPoKi3J8I/Saitynai?node-id=0-1&t=xqWwb7iVqiqk99ta-1
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
