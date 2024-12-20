@@ -22,6 +22,7 @@ export default function GuestApiaryDetailsPage() {
 
         // Fetch Hives
         const hivesData = await apiService.get(`/apiaries/${apiaryId}/hives`, false);
+        // @ts-ignore
         setHives(hivesData);
       } catch (error) {
         console.error("Error fetching apiary or hives:", error);

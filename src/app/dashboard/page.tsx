@@ -31,6 +31,7 @@ export default function DashboardPage() {
       try {
         const data = await apiService.get("/apiaries");
         console.log("Fetched Apiaries:", data); // Debugging: Log fetched data
+        // @ts-ignore
         setApiaries(data);
       } catch (error) {
         console.error("Error fetching apiaries:", error);

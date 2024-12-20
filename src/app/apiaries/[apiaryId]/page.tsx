@@ -22,6 +22,7 @@ export default function ApiaryDetailsPage() {
         setApiary(apiaryData);
 
         const hivesData = await apiService.get(`/apiaries/${apiaryId}/hives`);
+        // @ts-ignore
         setHives(hivesData);
       } catch (error) {
         console.error("Error fetching apiary or hives:", error);

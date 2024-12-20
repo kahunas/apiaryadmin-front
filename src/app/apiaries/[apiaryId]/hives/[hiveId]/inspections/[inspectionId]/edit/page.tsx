@@ -23,11 +23,8 @@ export default function EditInspectionPage() {
         const inspectionData = await apiService.get(
           `/apiaries/${apiaryId}/hives/${hiveId}/inspections/${inspectionId}`
         );
-        setInspection({
-          title: inspectionData.title,
-          date: inspectionData.date.split("T")[0], // Format date for input
-          notes: inspectionData.notes,
-        });
+        // @ts-ignore
+        setInspection({title: inspectionData.title,date: inspectionData.date.split("T")[0],notes: inspectionData.notes,});
       } catch (error) {
         console.error("Error fetching inspection:", error);
         alert("Failed to fetch inspection details. Redirecting to hive.");

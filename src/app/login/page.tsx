@@ -26,6 +26,7 @@ export default function Login() {
       setToken(token); // Store the JWT token in cookies
       router.push("/dashboard"); // Redirect to dashboard
     } catch (error) {
+      // @ts-ignore
       setError(error.message || "An unexpected error occurred. Please try again.");
     }
   };

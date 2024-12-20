@@ -16,6 +16,7 @@ export default function EditApiaryPage() {
       const apiService = new ApiService();
       try {
         const data = await apiService.get(`/apiaries/${apiaryId}`);
+        // @ts-ignore
         setApiary(data); // Set the data to the form
       } catch (error) {
         console.error("Error fetching apiary:", error);

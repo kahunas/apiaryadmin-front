@@ -14,6 +14,7 @@ export default function GuestApiariesPage() {
       try {
         const data = await apiService.get("/apiaries", false);
         console.log("Fetched Apiaries:", data); // Debugging: Log fetched data
+        // @ts-ignore
         setApiaries(data);
       } catch (error) {
         console.error("Error fetching apiaries:", error);

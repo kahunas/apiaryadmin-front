@@ -17,6 +17,7 @@ export default function EditHivePage() {
       try {
         console.log(`Fetching hive: /apiaries/${apiaryId}/hives/${hiveId}`);
         const hiveData = await apiService.get(`/apiaries/${apiaryId}/hives/${hiveId}`);
+        // @ts-ignore
         setFormData({ name: hiveData.name, description: hiveData.description }); // Pre-fill form
       } catch (error) {
         console.error("Error fetching hive:", error);

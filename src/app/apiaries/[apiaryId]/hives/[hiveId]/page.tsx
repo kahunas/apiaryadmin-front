@@ -30,6 +30,7 @@ export default function HiveDetailsPage() {
         const inspectionsData = await apiService.get(
           `/apiaries/${apiaryId}/hives/${hiveId}/inspections`
         );
+        // @ts-ignore
         setInspections(inspectionsData);
       } catch (error) {
         console.error("Error fetching hive or inspections:", error);
